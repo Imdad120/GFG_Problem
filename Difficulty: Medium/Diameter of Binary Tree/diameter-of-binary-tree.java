@@ -15,12 +15,13 @@ class Solution {
         max = 0;
         level(root);
         return max;
+        
     }
     private int level(Node root){
         if(root == null) return 0;
         int leftLevel = level(root.left);
-        int rightLevel= level(root.right);
-        max = Math.max(max, leftLevel + rightLevel);
-        return 1 + Math.max(leftLevel , rightLevel);
+        int rightLevel = level(root.right);
+        max = Math.max(max, leftLevel+rightLevel);
+        return 1 + Math.max(leftLevel, rightLevel);
     }
-}   
+}
